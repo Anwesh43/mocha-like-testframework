@@ -1,5 +1,5 @@
 const assert = require('assert')
-const {it, describe, start} = require('./lib')
+const {it, describe, start, beforeAll, beforeEach, afterEach, afterAll} = require('./lib')
 
 describe('1st suite', () => {
     it('checks 1 == 1', (done) => {
@@ -42,6 +42,33 @@ describe('2nd suite checking failure', () => {
       assert(1 == 1)
       done()
   })
+})
+
+describe('ae,be, aall, ball, suite', () => {
+    beforeEach(() => {
+        console.log("will be called before each test case")
+    })
+
+    beforeAll(() => {
+        console.log("will be called before all test cases")
+    })
+
+    afterEach(() => {
+        console.log("will be called after each test case")
+    })
+
+    afterAll(() => {
+        console.log("will be called after all test cases")
+    })
+    it('checks basic1', (done) => {
+        done()
+    })
+    it('checks basic2', (done) => {
+        done()
+    })
+    it('checks basic3', (done) => {
+        done()
+    })
 })
 
 start()
